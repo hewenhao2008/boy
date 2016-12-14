@@ -1,0 +1,9 @@
+*/1 * * * * /bin/sh /wiware/bin/netshell/loop_del.sh
+*/2 * * * * /bin/sh /wiware/bin/checknet.sh
+*/2 * * * * /bin/sh /wiware/bin/wigetserver.sh
+*/5 * * * * /bin/sh /wiware/bin/wwwhatch.sh
+*/5 * * * * killall -HUP dnsmasq
+0 */2 * * * /bin/sh /wiware/bin/upload.sh
+0 */3 * * * /bin/sh /wiware/bin/checkupdate.sh
+0 */6 * * * /bin/sh /wiware/bin/checksys.sh
+0 */6 * * * /bin/sh /wiware/bin/report/reports.sh 

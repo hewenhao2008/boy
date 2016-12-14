@@ -1,0 +1,43 @@
+#!/bin/sh
+source /lib/functions/network.sh
+source /wiware/bin/wicore.sh
+
+case "$1" in
+lanip)
+	if ! network_get_ipaddr lanip "lan"; then
+		lanip=$(/sbin/uci get network.lan.ipaddr 2>/dev/null)
+		lanip=${lanip:-192.168.88.253}
+        	wipark_log error "netget lanip failed. default to $lanip"
+	fi
+	echo $lanip
+;;
+wlanip)
+	if ! network_get_ipaddr wlanip "wlan"; then
+		wlanip=$(/sbin/uci get network.wlan.ipaddr 2>/dev/null)
+		wlanip=${wlanip:-10.10.10.1}
+		wipark_log error "netget wlan ip failed. default to $wlanip"
+	fi
+	echo $wlanip
+;;
+wanip)
+	if network_get_ipaddr wanip "wan"; then
+		echo $wanip
+	fi
+;;
+wwanip)
+	if network_get_ipaddr wwanip "wwan"; then
+		echo $wwanip
+	fi
+;;
+
+wanlink)
+	if network_is_up "wan"; then
+		echo connected
+	else
+		echo disconnected
+	fi
+;;
+*)
+        echo "Usage: $0 $* not support"
+;;
+esac

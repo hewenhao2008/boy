@@ -1,0 +1,102 @@
+#!/bin/sh
+
+case "$1" in
+key)
+	key=$(uci get wipark.conf.key 2>/dev/null)
+	echo ${key:-wiparkhitwan}
+;;
+varifycode)
+	mymac=$(wiget idmac)
+        hexvcode=$(echo "wipark$mymac"|md5sum|awk '{print substr($1,27,6)}')
+        printf "%08d" $(echo $((0x$hexvcode)))
+;;
+nameserver)
+	ns=$(uci get wipark.conf.nameserver 2>/dev/null || echo 'dns.wipark.cn')
+	echo $ns
+;;
+server)
+	server=$(cat /tmp/serverurl 2>/dev/null)
+	[ "x$server" = "x" ] && server=$(uci get wipark.conf.nodeserver)
+	echo $server
+;;
+authserver)
+	authserver=$(uci get wipark.conf.authserver)
+	echo $authserver
+;;
+boxmac)
+	cat /tmp/boxmac
+;;
+idmac)
+	cat /tmp/boxmac |sed 's/://g'
+;;
+token)
+	mac=$(cat /tmp/boxmac|sed 's/://g')
+	key=$(uci get wipark.conf.key 2>/dev/null ||echo 'wiparkhitwan')
+	token=$(echo -n "$mac$key"|md5sum|awk '{print substr($1,1,4)}')
+	echo $token 
+;;
+hardware)
+	#. /lib/ralink.sh
+	#ralink_board_name
+	machine=$(awk 'BEGIN{FS="[ \t]+:[ \t]"} /machine/ {print $2}' /proc/cpuinfo)
+	echo $machine
+;;
+osname)
+	osname=$(uci -c /wiware/etc get wipark.firmware.osname 2>/dev/null)
+        echo ${osname:-WIWARE}
+;;
+version)
+	version=$(uci -c /wiware/etc get wipark.firmware.version 2>/dev/null)
+	echo ${version:-1.00}
+;;
+releasetime)
+	releasetime=$(uci -c /wiware/etc get wipark.firmware.releasetime 2>/dev/null)
+	echo ${releasetime:-20140901}
+;;
+versiontag)
+	version=$(uci -c /wiware/etc get wipark.firmware.version 2>/dev/null)
+	releasetime=$(uci -c /wiware/etc get wipark.firmware.releasetime 2>/dev/null)
+	echo "${version:-1.00}.${releasetime:-20140901}"
+;;
+inmode)
+	inmode=$(uci get wipark.conf.inmode 2>/dev/null)
+	echo ${inmode:-1}
+;;
+ipmac)
+	if [ "x$2" != "x" ];
+	then
+		grep $2 /proc/net/arp|awk '{print $4}'|tr [a-z] [A-Z]
+	fi
+;;
+macip)
+	if [ "x$2" != "x" ];
+	then
+		tmp=$(echo $2|tr [A-Z] [a-z])
+		grep $tmp /proc/net/arp|awk '{print $1}'
+	fi
+;;
+domain)
+	boxdomain=$(uci get wipark.conf.domain 2>/dev/null)
+	echo ${boxdomain:-m.wipark.cn}
+;;
+domain_alies)
+	boxdomain=$(/sbin/uci get wipark.conf.domain_alies 2>/dev/null)
+	echo ${boxdomain:-u.wipark.cn}
+;;
+ssid)
+	uci get wireless.guest.ssid
+;;
+staip)
+	uci get wireless.sta 1>/dev/null 2>/dev/null && route |grep default|awk '{print $2}' || echo ""
+;;
+nettype)
+	uci get wipark.conf.nettype ||/sbin/uci get network.wan.proto 2>/dev/null
+;;
+netstatus)
+	[ -f /tmp/neton ] && echo "connected" || echo "disconnected"
+;;
+*)
+	echo "Usage: $0 $* not support"
+;;
+esac
+

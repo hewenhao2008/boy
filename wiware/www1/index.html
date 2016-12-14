@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <title>一键上网</title>
+    <link rel="stylesheet" href="http://w.wipark.cn/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://w.wipark.cn/assets/css/style.css">
+    <link rel="stylesheet" href="http://w.wipark.cn/assets/css/owl.carousel.css"/>
+    <link rel="stylesheet" href="http://w.wipark.cn/assets/css/owl.theme.css"/>
+    <link rel="stylesheet" href="http://w.wipark.cn/assets/css/buttons.css"/>
+    <style>
+        body{
+            /*background-color: #222;*/
+            padding: 0;
+            margin:0;
+        }
+        .wp-carousel-wrapper{
+            margin: 0 auto;
+        }
+
+        .wp-success-wrapper{
+            padding-top:20px;
+            display: none;
+            background-color: #f4f4f4;
+            color:#60d7a9;
+        }
+
+        .wp-success-wrapper .links{
+            list-style: none;
+            margin:0;
+            text-align: left;
+            padding: 0px;
+            padding-top:10px;
+            border:1px solid #60d7a9;
+            background-color: #60d7a9;
+            color:#FFF;
+        }
+
+        .wp-success-wrapper .links li{
+            float: left;
+            margin-left: 10px;
+            height: 30px;
+            width: 30%;
+            line-height: 30px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight:  bold;
+        }
+
+        .wp-success-wrapper .links li a{
+            color:#FFF;
+        }
+
+        .wp-carousel-wrapper .wp-carousel-widget{
+            height: 100%;
+        }
+
+        .wp-carousel-wrapper .wp-carousel-widget .wp-carousel-card{
+            display: table;
+            width: 100%;
+            /*overflow: hidden;*/
+            position: relative;
+        }
+
+
+        .wp-carousel-wrapper .wp-carousel-widget .wp-carousel-intro{
+            background-color: #f4f4f4;
+            color:#60d7a9;
+        }
+
+        .wp-carousel-wrapper .wp-carousel-widget .wp-carousel-gat{
+            background-color: #f4f4f4;
+            color:#60d7a9;
+        }
+
+
+        .wp-carousel-wrapper .wp-carousel-widget .wp-carousel-gat .copyright{
+            position: absolute;
+            bottom:50px;
+            width: 100%;
+        }
+
+        .wp-carousel-wrapper .wp-carousel-widget .wp-carousel-gat .main{
+            width: 100%;
+            position: absolute;
+            top:25%;
+        }
+
+        .wp-carousel-wrapper .wp-carousel-widget .wp-carousel-intro .copyright{
+            position: absolute;
+            bottom:50px;
+            width: 100%;
+        }
+
+        .wp-carousel-wrapper .wp-carousel-widget .wp-carousel-intro .main{
+            width: 100%;
+            position: absolute;
+            top:25%;
+        }
+
+        .wp-carousel-wrapper .wp-carousel-widget .wp-carousel-card .img-wrapper{
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .wp-carousel-wrapper .wp-carousel-widget .wp-carousel-card img{
+            max-width: 720px;
+            margin:0 auto;
+            width: 100%;
+        }
+
+        .wp-auth-wrapper{
+            /*background-color: #f4f4f4;*/
+            height: 100%;
+            display: none;
+            color:#60d7a9;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="text-center loadmask" style="color:#60d7a9">
+    <h4>页面加载中,请稍候...</h4>
+</div>
+
+<div class="wp-success-wrapper container">
+    <h4 class="text-center">恭喜，你可以免费上网啦</h4>
+    <h5 class="text-center show-time">获得了<strong class="free-time">未知</strong>小时的免费上网时间</h5>
+    <hr>
+    <ul class="links clearfix">
+        <li style="width: 100%;">试试这些网站吧：</li>
+        <li><a href="/">微站</a></li>
+        <li><a target="_blank" href="http://www.baidu.com">百度</a></li>
+        <li><a target="_blank" href="http://www.qq.com">腾讯</a></li>
+        <li><a target="_blank" href="http://music.163.com">网易云音乐</a></li>
+        <li><a target="_blank" href="http://www.douban.com">豆瓣</a></li>
+        <li><a target="_blank" href="http://www.sohu.com">搜狐</a></li>
+        <li><a target="_blank" href="http://www.taobao.com">淘宝</a></li>
+        <li><a target="_blank" href="http://www.163.com">豆瓣</a></li>
+        <li><a target="_blank" href="http://www.tmall.com">天猫</a></li>
+        <li><a target="_blank" href="http://www.youku.com">优酷</a></li>
+        <li><a target="_blank" href="http://www.tudou.com">土豆</a></li>
+        <li><a target="_blank" href="http://www.tianya.com">天涯</a></li>
+        <li><a target="_blank" href="http://www.renren.com">人人网</a></li>
+        <li><a target="_blank" href="http://www.weibo.com">新浪微博</a></li>
+        <li><a target="_blank" href="http://t.qq.com">腾讯微博</a></li>
+    </ul>
+    <div class="text-center" style="opacity: .6;margin-top: 20px;">本服务由WiPark提供</div>
+</div>
+
+
+<div class="wp-carousel-wrapper" style="display: none;">
+    <div class="owl-carousel wp-carousel-widget">
+        <div class="wp-carousel-card wp-carousel-intro">
+            <div class="main">
+                <h3 class="text-center">一键上网</h3>
+                <div class="index-notime-msg" style="display: none;">
+                    <h5 class="text-center" style="opacity: .7;">向左滑动 <strong class="text-danger">0</strong> 张图片免费上网</h5>
+                    <p class="text-center" style="font-size: 30px;color:#60d7a9;margin-top: 40px;">
+                        <i class="glyphicon glyphicon-hand-left"></i>
+                    </p>
+                </div>
+                <div class="index-time-msg" style="display: none;">
+                    <h5 class="text-center" style="opacity: .7;">你还剩余 <strong class="text-danger lefttime"></strong> 免费上网时长</h5>
+                </div>
+            </div>
+            <div class="copyright text-center" style="opacity: .4;">本服务由WiPark提供</div>
+        </div>
+                                                                                                <div class="wp-carousel-card wp-carousel-gat">
+            <div class="main">
+                <h3 class="text-center">一键上网</h3>
+                <h5 class="text-center" style="opacity: .7;">点下面的按钮开始免费上网</h5>
+                <p class="text-center" style="margin-top:30px;">
+                    <a href="javascript:void(0);" class="button button-circle glow wp-getfreewifi-btn" style="font-size:70px;line-height: 120px;color:#60d7a9;">
+			<i style="margin-left: -8px;" class="glyphicon glyphicon-plane"></i>
+                    </a>
+                </p>
+            </div>
+            <div class="copyright text-center" style="opacity: .4;">本服务由WiPark提供</div>
+        </div>
+    </div>
+</div>
+<script src="http://w.wipark.cn/assets/js/jquery.js"></script>
+<script src="http://w.wipark.cn/assets/js/lib/jquery.form.js"></script>
+<script src="http://w.wipark.cn/assets/js/lib/jquery.adaptive-backgrounds.js"></script>
+<script src="http://w.wipark.cn/assets/js/bootstrap.min.js"></script>
+<script src="http://w.wipark.cn/assets/js/lib/owl.carousel.min.js"></script>
+<script src="http://w.wipark.cn/assets/js/lib/buttons.js"></script>
+<script>
+    $(function(){
+        var REDIRECT_URL = ""
+
+        function windowResize(){
+            $(".wp-success-wrapper").css({"min-height":$(window).height()});
+            $(".wp-carousel-card").height($(window).height());
+            $(".wp-carousel-card").width($(window).width());
+        }
+        windowResize();
+        $(window).resize(function(){
+            windowResize();
+        });
+        var wpCarousel = $(".owl-carousel");
+
+        wpCarousel.owlCarousel({
+            items : 1,
+            responsive:false,
+            autoHeight:true
+        });
+
+        //切换认证方式
+        $(".auth-wx-toggle").click(function(){
+            $(".auth-sms").slideUp();
+            $(".auth-wx").slideDown();
+        });
+
+        $(".auth-sms-toggle").click(function(){
+            $(".auth-wx").slideUp();
+            $(".auth-sms").slideDown();
+        });
+
+        //获取短信验证码
+        var smsCodeCounter = 0;
+        $(".wp-e-getcaptcha").click(function(){
+            if($(this).hasClass("disabled")) return;
+            var form = $("form.wp-phone-auth-form");
+            var phone = $("input[name='wp_phonenumber']",form).val();
+            if(phone.length != 11){
+                alert("请先输入11位手机号码");
+                return;
+            }
+            var self = this;
+            $(this).html("稍候..");
+            $.ajax({
+                url:"./fw.php?action=smssend",
+                data:{
+                    phone : phone
+                },
+                dataType:"json",
+                success:function(resp){
+                    if(resp.status){
+                        alert("短信验证码已经发送到你的手机，请查收");
+                        $(self).addClass("disabled");
+                        var smsCodeID = setInterval(function(){
+                            smsCodeCounter++;
+                            if(smsCodeCounter == 60){
+                                clearInterval(smsCodeID);
+                                $(self).removeClass("disabled").html("获取短信验证码");
+                                smsCodeCounter = 0;
+                            }else{
+                                $(self).html(60-smsCodeCounter+"秒后重新获取");
+                            }
+                        },1000);
+                    }else{
+                        alert("获取短信验证码失败："+resp.msg+",请稍候重试!");
+                    }
+                },
+                error:function(e,msg){
+                    alert("获取短信验证码失败："+msg+"，请稍候重试！");
+                }
+            })
+        });
+
+        $(".wp-getfreewifi-btn").click(function(){
+
+            $.ajax({
+                url:"./fw.php?action=authcheck",
+                dataType:"json",
+                success:function(resp){
+                    if(resp.status){
+                        if(resp.user.type == "directive"){
+                            $(".wp-carousel-wrapper").hide();
+                            $(".wp-auth-wrapper").hide();
+                            $(".wp-success-wrapper .show-time").html("你已取得<span class='text-danger'>"+resp.user.pretty_time+"</span>小时的免费上网时长");
+                            $(".wp-success-wrapper").show();
+                            window.location.reload();
+                        }else if(resp.user.type == "left"){
+                            $(".wp-carousel-wrapper").hide();
+                            $(".wp-auth-wrapper").hide();
+                            $(".wp-success-wrapper .show-time").html("你还剩余<span class='text-danger'>"+resp.user.pretty_time+"</span>的免费上网时长");
+                            $(".wp-success-wrapper").show();
+                        }else{
+                            $(".wp-success-wrapper").hide();
+                            $(".wp-carousel-wrapper").hide();
+                            $(".wp-auth-wrapper").show();
+                        }
+                    }else{
+                        alert("获取免费上网时长失败："+resp.msg);
+                    }
+                },
+                error:function(eMsg){
+                    alert("获取免费上网时长发生错误:"+eMsg);
+                }
+            })
+        });
+
+        //短信认证上网
+
+        $("form.wp-phone-auth-form").ajaxForm({
+            dataType:"json",
+            beforeSubmit:function(){
+                var phone = $("input[name='wp_phonenumber']").val();
+                var captcha = $("input[name='wp_phonecaptcha']").val();
+                if(phone.length != 11 || captcha.length !=4 ){
+                    alert("请输入正确的手机号码和验证码");
+                    return false;
+                }
+            },
+            success:function(resp){
+                if(resp.status){
+                    $(".wp-carousel-wrapper").hide();
+                    $(".wp-auth-wrapper").hide();
+                    $(".wp-success-wrapper").slideDown();
+                    $(".wp-success-wrapper .free-time").html(resp.user.time);
+                }else{
+                    alert("获取免费上网失败："+resp.msg+"，请稍候重试！");
+                }
+            },
+            error:function(){
+                alert("获取免费上网失败："+msg+"，请稍候重试！");
+            }
+        });
+
+        $.ajax({
+            url:"./fw.php?action=carouselinit",
+            dataType:"json",
+            success:function(resp){
+                $(".loadmask").hide();
+                $(".wp-carousel-wrapper").show();
+                if(resp.status){
+                    if(resp.user.lefttime > 0){
+                        $(".index-time-msg").show();
+                        $(".index-time-msg .lefttime").html(resp.user.lefttime_pretty);
+                    }else{
+                        $(".index-notime-msg").show();
+                    }
+                }else{
+                    $(".index-notime-msg").show();
+                }
+            },
+            error:function(e,msg){
+                $(".loadmask").hide();
+                $(".wp-carousel-wrapper").show();
+                $(".index-notime-msg").show();
+            }
+        });
+
+        $.adaptiveBackground.run();
+    });
+</script>
+</body>
+</html>
+
+
+

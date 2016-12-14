@@ -1,0 +1,4 @@
+config wsqos 'conf' 
+        option bandwidth '50'
+        option shared '0'
+        option maxclients '32'

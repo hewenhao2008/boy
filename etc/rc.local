@@ -1,0 +1,11 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+[ -d /wiware/www ] || {
+	rm /wiware/www
+	cd /wiware && ln -s /wiware/www1 www
+}
+
+sh /wiware/initwipark.sh
+
+exit 0

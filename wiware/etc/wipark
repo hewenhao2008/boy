@@ -1,0 +1,4 @@
+config wipark firmware
+        option osname WIWARE
+        option version 1.09
+        option releasetime 20150501

@@ -1,0 +1,121 @@
+body {
+    padding-top: 5px;
+    padding-bottom: 60px;
+}
+a:hover{
+    text-decoration: none;
+}
+.heading {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #222222;
+}
+.form-wipark {
+    max-width: 330px;
+    padding: 5px;
+    margin: 0 auto;
+}
+.form-wipark-heading {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #999999;
+}
+.form-wipark p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.form-wipark .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.form-wipark .form-control:focus {
+    z-index: 2;
+}
+.form-wipark input{
+    margin-bottom: 10px;
+}
+.container {
+    padding: 10px;
+    max-width: 730px;
+}
+.block-justified {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+}
+.block {
+    display: table-cell;
+    float: none;
+    width: 1%;
+    position: relative;
+    color: #FFF;
+    vertical-align: middle;
+}
+.block a {
+    color: #FFF;
+}
+.blocka {
+    display: block;
+    color: #FFF;
+    margin: 2px;
+    padding: 10px 10px;
+}
+.block .bighd {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.block .bg {
+    padding-top: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+.block i {
+    font-size: 40px;
+}
+.block .info {
+    font-size: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+.block .biginfo {
+    font-size: 12px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: center;
+    overflow: hidden;
+    height: 35px;
+}
+.navbar-justified {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+}
+.navblock {
+    display: table-cell;
+    float: none;
+    width: 1%;
+    position: relative;
+    padding: 0px 5px;
+    color: #777;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align:center;
+    vertical-align: middle;
+}
+.footer-wipark {
+    margin-bottom: 60px;
+    text-align:center;
+    color:#999999
+}
